@@ -9,6 +9,10 @@ target 'ShoppingList' do
   use_react_native!(:path => config["reactNativePath"])
 
 
+  pod 'react-native-uuid-generator', :path => '../node_modules/react-native-uuid-generator'
+
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'ShoppingListTests' do
     inherit! :complete
     # Pods for testing
