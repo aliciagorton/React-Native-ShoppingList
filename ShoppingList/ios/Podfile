@@ -11,7 +11,7 @@ target 'ShoppingList' do
 
   pod 'react-native-uuid-generator', :path => '../node_modules/react-native-uuid-generator'
 
-  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
 
   target 'ShoppingListTests' do
     inherit! :complete
