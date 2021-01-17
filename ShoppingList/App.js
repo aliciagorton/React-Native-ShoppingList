@@ -27,6 +27,12 @@ const App = () => {
     },
   ]);
 
+  const deleteItem = id => {
+    setItems(prevItems => {
+      return prevItems.filter(item => item.id !== id);
+    });
+  };
+
   return (
     // needs to use React Native Components
     <View style={styles.container}>
@@ -34,11 +40,11 @@ const App = () => {
       <FlatList
         data={items}
         renderItem={({item}) => (
-          <ListItem
-            item={item}
-          />
+          <ListItem 
+          item={item} 
+          deleteItem={deleteItem} />
         )}
-      />
+        />
     </View>
   );
 };
@@ -49,4 +55,5 @@ const styles = StyleSheet.create({
     paddingTop: 60,
   },
 });
+
 export default App;
