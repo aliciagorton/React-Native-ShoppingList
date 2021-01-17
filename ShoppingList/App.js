@@ -37,8 +37,7 @@ const App = () => {
   const addItem = text => {
     if (!text) {
       Alert.alert(
-        'No item entered',
-        'Please enter an item when adding to your shopping list',
+        'Error, No Item Entered',
         [
           {
             text: 'Understood',
