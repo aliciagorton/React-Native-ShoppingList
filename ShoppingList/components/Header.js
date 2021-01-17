@@ -1,19 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-const styles = StyleSheet.create({
-  header: {
-    height: 60,
-    padding: 15,
-    backgroundColor: 'darkblue',
-  },
-  text: {
-    color: 'white',
-    fontSize: 23,
-    textAlign: 'center',
-  },
-});
-
 const Header = ({title}) => {
   return (
     <View style={styles.header}>
@@ -25,5 +12,19 @@ const Header = ({title}) => {
 Header.defaultProps = {
   title: 'Shopping List',
 };
+
+const styles = StyleSheet.create({
+  header: {
+    height: 60,
+    padding: 15,
+    backgroundColor: '#00e6ac',
+  },
+  text: {
+    color: 'white',
+    fontSize: 23,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+});
 
 export default Header;

@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
 import {View, StyleSheet, FlatList, Alert} from 'react-native';
-import { v4 as uuidv4 } from 'uuid';
+import {v4 as uuidv4} from 'uuid';
 
 import Header from './components/Header';
-import ListItem from './components/ListItem'
+import ListItem from './components/ListItem';
 import AddItem from './components/AddItem';
-
 
 const App = () => {
 
