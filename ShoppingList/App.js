@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import {View, StyleSheet, FlatList} from 'react-native';
+import {View, StyleSheet, FlatList, Alert} from 'react-native';
 import { v4 as uuidv4 } from 'uuid';
 
 import Header from './components/Header';
 import ListItem from './components/ListItem'
+import AddItem from './components/AddItem';
 
 
 const App = () => {
@@ -33,10 +34,31 @@ const App = () => {
     });
   };
 
+  const addItem = text => {
+    if (!text) {
+      Alert.alert(
+        'No item entered',
+        'Please enter an item when adding to your shopping list',
+        [
+          {
+            text: 'Understood',
+            style: 'cancel',
+          },
+        ],
+        {cancelable: true},
+      );
+    } else {
+      setItems(prevItems => {
+        return [{id: uuidv4(), text}, ...prevItems];
+      });
+    }
+  };
+
   return (
     // needs to use React Native Components
     <View style={styles.container}>
       <Header />
+      <AddItem addItem={addItem} />
       <FlatList
         data={items}
         renderItem={({item}) => (
